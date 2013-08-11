@@ -4,85 +4,55 @@ class Forecast:
     def __init__(self, data):
         self._json = data
 
-    @property
-    def latitude(self):
         try:
-            latitude = self._json['latitude']
+            self.latitude = self._json['latitude']
         except:
             pass
-        return latitude
 
-    @property
-    def longitude(self):
         try:
-            longitude = self._json['longitude']
+            self.longitude = self._json['longitude']
         except:
             pass
-        return longitude
 
-    @property
-    def timezone(self):
         try:
-            timezone = self._json['timezone']
+            self.timezone = self._json['timezone']
         except:
             pass
-        return timezone
 
-    @property
-    def offset(self):
         try:
-            offset = self._json['offset']
+            self.offset = self._json['offset']
         except:
             pass
-        return offset
 
-    @property
-    def currently(self):
         try:
-            currently = ForecastDataPoint(self._json['currently'])
+            self.currently = DataPoint(self._json['currently'])
         except:
             pass
-        return currently
 
-    @property
-    def minutely(self):
         try:
-            minutely = ForecastDataBlock(self._json['minutely'])
+            self.minutely = DataBlock(self._json['minutely'])
         except:
             pass
-        return minutely
 
-    @property
-    def hourly(self):
         try:
-            hourly = ForecastDataBlock(self._json['hourly'])
+            self.hourly = DataBlock(self._json['hourly'])
         except:
             pass
-        return hourly
 
-    @property
-    def daily(self):
         try:
-            daily = ForecastDataBlock(self._json['daily'])
+            self.daily = DataBlock(self._json['daily'])
         except:
             pass
-        return daily
 
-    @property
-    def alerts(self):
         try:
-            alerts = [Alert(alert) for alert in self._json['alerts']]
+            self.alerts = [Alert(alert) for alert in self._json['alerts']]
         except:
             pass
-        return alerts
 
-    @property
-    def flags(self):
         try:
-            flags = Flags(self._json['flags'])
+            self.flags = Flags(self._json['flags'])
         except:
             pass
-        return flags
 
     def __str__(self):
         return self._json.__str__()
