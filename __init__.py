@@ -1,1 +1,1 @@
-from forecast-io.api import get_forecast
+from forecast_io.api import get_forecast

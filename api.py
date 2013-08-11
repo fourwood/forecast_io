@@ -1,7 +1,7 @@
 import urllib.request
 import urllib.error
 import json
-from forecastio.forecast import Forecast
+from forecast_io.forecast import Forecast
 
 URL_BASE = "http://api.forecast.io/forecast/"
 
