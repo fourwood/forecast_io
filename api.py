@@ -3,7 +3,7 @@ import urllib.error
 import json
 from forecast_io.forecast import Forecast
 
-URL_BASE = "http://api.forecast.io/forecast/"
+URL_BASE = "https://api.darksky.net/forecast/"
 
 def _make_url(api_key, lat, lon, time=None, **kwargs):
     url = "{0}/{1},{2}".format(api_key,lat,lon)
